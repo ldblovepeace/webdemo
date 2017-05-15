@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>	
+	<package name="chapter16" namespace="/chapter16" extends="struts-default">
+		<action name="login" class="chapter16.action.LoginAction">
+			<result name="success">
+				main.jsp
+			</result>
+			<result name="input">
+				/chapter16/login.jsp
+			</result>
+		</action>
+		<action name="register" class="chapter16.action.RegisterAction">
+			<result name="success">register.jsp</result>
+			<result name="input">register.jsp</result>
+		</action>
+		
+		<action name="validation_code" class="chapter16.action.ValidationCodeAction"/>	
+		
+		<action name="sendtext" class="chapter16.action.SendTextAction">
+			<result name="success">forgetpassword.jsp</result>
+		</action>
+		
+		<action name="forgetpassword" class="chapter16.action.ForgetPasswordAction">
+			<result name="confirm">newpassword.jsp</result>	
+			<result name="input">forgetpassword.jsp</result>
+		</action>
+		
+		<action name="newpassword" class="chapter16.action.NewPasswordAction">
+			<result name="success">login.jsp</result>
+			<result name="input">newpassword.jsp</result>
+		</action>
+	</package>
+</struts>
